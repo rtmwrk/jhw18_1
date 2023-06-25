@@ -53,7 +53,6 @@ class MoneyTransferTest {
     }
 
   // Функциональный негативный тест
-  // тест должен проходить
 //  @Test
 //  void shouldTransferMoneyFromFirstCardToSecondCardWithTooMatchValue() {
 //    // Первая карта
@@ -69,7 +68,7 @@ class MoneyTransferTest {
 //    // Пробуем перевести средства
 //    var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
 //    transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
-//    transferPage.findErrorMessage("Выполнена попытка перевода суммы, превыщающей остаток на карте списания");
+//    transferPage.findErrorMessage("Сумма перевода, превышает остаток на карте списания");
 //    // Получаем балансы на картах после перевода
 //    var actualBalanceFirstCard = dashboardPage.getCardBalance(firstCardInfo);
 //    var actualbalanceSecondCard = dashboardPage.getCardBalance(secondCardInfo);
