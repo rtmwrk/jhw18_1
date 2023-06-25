@@ -25,7 +25,6 @@ class MoneyTransferTest {
     }
 
     // Функциональный позитивный тест
-    // тест должен проходить
     @Test
     void shouldTransferMoneyFromFirstCardToSecondCard() {
       // Первая карта
