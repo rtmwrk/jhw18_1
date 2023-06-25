@@ -53,29 +53,29 @@ class MoneyTransferTest {
     }
 
   // Функциональный негативный тест
-//  @Test
-//  void shouldTransferMoneyFromFirstCardToSecondCardWithTooMatchValue() {
-//    // Первая карта
-//    var firstCardInfo = getFirstCardInfo();
-//    // Вторая карты
-//    var secondCardInfo = getSecondCardInfo();
-//    // Баланс 1-й карты
-//    var firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
-//    // Баланс 2-й карты
-//    var secondCardBalance = dashboardPage.getCardBalance(secondCardInfo);
-//    // Формируем сумму перевода с 1-й карты на 2-ю
-//    var amount = generateInvalidAmount(secondCardBalance);
-//    // Пробуем перевести средства
-//    var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
-//    transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
-//    transferPage.findErrorMessage("Сумма перевода, превышает остаток на карте списания");
-//    // Получаем балансы на картах после перевода
-//    var actualBalanceFirstCard = dashboardPage.getCardBalance(firstCardInfo);
-//    var actualbalanceSecondCard = dashboardPage.getCardBalance(secondCardInfo);
-//    // Сравниваем фактические и первоначальные балансы на обеих картах
-//    assertEquals(firstCardBalance, actualBalanceFirstCard);
-//    assertEquals(secondCardBalance, actualbalanceSecondCard);
-//  }
+  @Test
+  void shouldTransferMoneyFromFirstCardToSecondCardWithTooMatchValue() {
+    // Первая карта
+    var firstCardInfo = getFirstCardInfo();
+    // Вторая карты
+    var secondCardInfo = getSecondCardInfo();
+    // Баланс 1-й карты
+    var firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
+    // Баланс 2-й карты
+    var secondCardBalance = dashboardPage.getCardBalance(secondCardInfo);
+    // Формируем сумму перевода с 1-й карты на 2-ю
+    var amount = generateInvalidAmount(secondCardBalance);
+    // Пробуем перевести средства
+    var transferPage = dashboardPage.selectCardToTransfer(firstCardInfo);
+    transferPage.makeTransfer(String.valueOf(amount), secondCardInfo);
+    transferPage.findErrorMessage("Сумма перевода превышает остаток на карте списания");
+    // Получаем балансы на картах после перевода
+    var actualBalanceFirstCard = dashboardPage.getCardBalance(firstCardInfo);
+    var actualbalanceSecondCard = dashboardPage.getCardBalance(secondCardInfo);
+    // Сравниваем фактические и первоначальные балансы на обеих картах
+    assertEquals(firstCardBalance, actualBalanceFirstCard);
+    assertEquals(secondCardBalance, actualbalanceSecondCard);
+  }
 
 }
 
